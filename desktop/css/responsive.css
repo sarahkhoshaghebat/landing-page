@@ -1,0 +1,31 @@
+
+/* MEDIA QUERIES */
+/* Extra Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) { 
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.container {
+		max-width: 100%; 
+	}
+	.div-border {
+		min-height: 100vh;
+		margin-top: 50%;
+	}
+	.background {
+		background-image: url(../img/mobail.jpg);
+		background-size: cover;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<title>دانلود اپلیکیشن کوچه</title>
+	<link rel="stylesheet" type="text/css" href="fonts/shabnam.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?1f8cb2">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css?1f8cb2">
+
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-141783719-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-592B8NM');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-592B8NM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+ <div class="background"></div>
+ <div class="container">
+ 	<div class="row justify-content-end">
+ 		<div class="col-sm-12 col-md-12 col-lg-5 div-border wrapper">
+ 			<img src="img/coocheh.png" class="logo" />
+ 			<br />
+ 			<h4 class="harcocheh">...هر کوچه داستانی داره</h4>
+ 			<p class="center">اینجا می‌تونی از آخرین حرف‌ها و داستان‌های آدم‌هایی که نزدیکت هستن با خبر شی! می‌تونی به کوچه‌های دیگه هم سر بزنی و ببینی اونجا چه داستان‌هایی داره!</p>
+ 			<p class="dlp">برای دریافت لینک <span>دانلود اپلیکیشن</span>  شماره موبایلتون رو وارد کنید.</p>
+ 			<div class="row mb-4">
+	 			<div class="input-container pb-3">
+	 				<form id="sms-download-link" class="input-group" method="post" action="https://coocheh.com/app/api/v2/config/download-link">
+	 					<div class="input-group-prepend">
+						    <input 
+						    	class="btn btn-success" 
+						    	type="submit" 
+						    	value="دریافت لینک" 
+								/>
+					    </div>
+					    <input type="text" name="phoneNumber" class="form-control phone-number-input" placeholder="09*********" pattern="^09\d{9}$" required />
+	 				</form>
+				  
+				</div>
+			</div>
+ 		</div>
+ 	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('#sms-download-link').on('submit', function (e) {
+				e.preventDefault();
+				$this = $(this);
+
+				$.ajax({
+					url: $this.attr('action'),
+					method: $this.attr('method'),
+					data: $this.serialize(),
+				}).done(function (res) {
+					if (res.data) {
+						window.location.pathname = '/landings/download/desktop/thanks.html';
+					}
+				}).fail(function () {
+					alert('خطایی رخ داده است، لطفا دوباره تلاش کنید.')
+				});
+			})
+		});
+	</script>
+</body>
+</html> 
